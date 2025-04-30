@@ -4,8 +4,8 @@ import seaborn as sns
 import os
 
 # Define directories
-processed_data_dir = '/home/ubuntu/rl_trading_system/data/processed'
-results_dir = '/home/ubuntu/rl_trading_system/results/eda_plots'
+processed_data_dir = r'C:\Users\Oriel\FinAlgoTrading\FinTech\rl_trading_system\data\processed'
+results_dir = r'C:\Users\Oriel\FinAlgoTrading\FinTech\rl_trading_system\results\eda_plots'
 os.makedirs(results_dir, exist_ok=True)
 
 # Symbol to analyze

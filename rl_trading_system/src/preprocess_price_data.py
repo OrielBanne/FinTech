@@ -4,11 +4,27 @@ import os
 import ta
 from ta.utils import dropna
 
-data_dir = '/home/ubuntu/rl_trading_system/data'
-processed_data_dir = '/home/ubuntu/rl_trading_system/data/processed'
+# Fix the data paths - use absolute path if needed
+# Option 1: Define absolute path
+# data_dir = r'C:\Users\Oriel\FinAlgoTrading\FinTech\rl_trading_system\data'
+# processed_data_dir = os.path.join(data_dir, 'processed')
+
+# Option 2: Or use relative path properly (if script is in src folder)
+data_dir = os.path.join('..', 'data')
+processed_data_dir = os.path.join(data_dir, 'processed')
+
+# Create the processed directory if it doesn't exist
 os.makedirs(processed_data_dir, exist_ok=True)
 
 symbols = ['AAPL', 'GOOG', 'NVDA', '^GSPC']
+
+# Debug statement to check if files exist
+for symbol in symbols:
+    file_path = os.path.join(data_dir, f'{symbol}_5y_1d.json')
+    if os.path.exists(file_path):
+        print(f"Found file: {file_path}")
+    else:
+        print(f"File not found: {file_path}")
 
 def process_price_data(symbol):
     file_path = os.path.join(data_dir, f'{symbol}_5y_1d.json')

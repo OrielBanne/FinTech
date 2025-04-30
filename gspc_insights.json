@@ -1,0 +1,9 @@
+{
+  "finance": {
+    "result": {
+      "symbol": "^GSPC",
+      "sigDevs": []
+    },
+    "error": null
+  }
+}

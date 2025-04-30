@@ -1,5 +1,3 @@
-# FinTech
-
 # Comparison of Trading Systems and Brokers with APIs
 
 | Broker/System | Connection Difficulty | API Type | Monthly Cost | Account Minimums | Commission | Python Library |
