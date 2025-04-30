@@ -47,13 +47,17 @@ for ticker in tickers:
             date_str = date.strftime('%Y-%m-%d')
             
             # Create entry with available columns
+            # Remove ticker suffix from column names
             entry = {}
             for column in stock_data.columns:
+                # Extract base column name by removing ticker suffix
+                base_column = column.split('_')[0] if '_' in column else column
+                
                 # Get the scalar value properly
                 if 'Volume' in str(column):
-                    entry[str(column)] = int(row[column])
+                    entry[base_column] = int(row[column])
                 else:
-                    entry[str(column)] = float(row[column])
+                    entry[base_column] = float(row[column])
             
             stock_dict[date_str] = entry
         
